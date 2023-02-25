@@ -1,0 +1,1475 @@
+{
+    "data": {
+        "$defs": {
+            "Algorithm": {
+                "properties": {
+                    "citation": {
+                        "item": {
+                            "$ref": "#/$defs/Reference"
+                        },
+                        "type": "array"
+                    },
+                    "key": {
+                        "enum": [
+                            "velocity_verlet",
+                            "leap_frog",
+                            "particle_mesh_ewald_sum",
+                            "cell_neighborlist",
+                            "verlet_neighborlist",
+                            "tree_neighborlist",
+                            "stencil_neighborlist",
+                            "nose-hoover",
+                            "berendsen",
+                            "langevin",
+                            "DPD",
+                            "brownian",
+                            "anderson",
+                            "lowe-anderson",
+                            "mc_barostat",
+                            "parinello-rahman_barostat",
+                            "martyna-tobias-klein_barostat",
+                            "shake",
+                            "rattle",
+                            "nemds",
+                            "lees-edwards_boundary",
+                            "rnemds",
+                            "advanced_sampling",
+                            "amorphous_cell_module",
+                            "ris",
+                            "sarw_on_lattice",
+                            "molecule_packing",
+                            "forcefield_assignment",
+                            "energy_minimization"
+                        ],
+                        "type": "string"
+                    },
+                    "type": {
+                        "enum": [
+                            "initialization",
+                            "integeregration",
+                            "analysis",
+                            "thermostat",
+                            "barostat"
+                        ],
+                        "type": "string"
+                    }
+                },
+                "type": "object"
+            },
+            "Citation": {
+                "properties": {
+                    "reference": {
+                        "type": "string"
+                    },
+                    "type": {
+                        "type": "string"
+                    }
+                },
+                "type": "object"
+            },
+            "Collection": {
+                "properties": {
+                    "dgraph.type": {
+                        "type": "string"
+                    },
+                    "doi": {
+                        "type": "string"
+                    },
+                    "experiment": {
+                        "items": {
+                            "$ref": "#/$defs/Experiment"
+                        },
+                        "type": "array"
+                    },
+                    "group": {
+                        "item": {
+                            "$ref": "#/$defs/Group"
+                        },
+                        "type": "array"
+                    },
+                    "inventory": {
+                        "item": {
+                            "$ref": "#/$defs/Inventory"
+                        },
+                        "type": "array"
+                    },
+                    "locked": {
+                        "type": "boolean"
+                    },
+                    "model_version": {
+                        "type": "string"
+                    },
+                    "name": {
+                        "type": "string"
+                    },
+                    "notes": {
+                        "type": "string"
+                    },
+                    "public": {
+                        "type": "boolean"
+                    },
+                    "url": {
+                        "type": "string"
+                    },
+                    "uuid": {
+                        "type": "string"
+                    }
+                },
+                "required": [
+                    "name",
+                    "experiment"
+                ],
+                "type": "object"
+            },
+            "Computation": {
+                "properties": {
+                    "citation": {
+                        "item": {
+                            "$ref": "#/$defs/Reference"
+                        },
+                        "type": "array"
+                    },
+                    "condition": {
+                        "item": {
+                            "$ref": "#/$defs/Condition"
+                        },
+                        "type": "array"
+                    },
+                    "dgraph.type": {
+                        "type": "string"
+                    },
+                    "group": {
+                        "item": {
+                            "$ref": "#/$defs/Group"
+                        },
+                        "type": "array"
+                    },
+                    "input_data": {
+                        "item": {
+                            "$ref": "#/$defs/Data"
+                        },
+                        "type": "array"
+                    },
+                    "locked": {
+                        "type": "boolean"
+                    },
+                    "model_version": {
+                        "type": "string"
+                    },
+                    "name": {
+                        "type": "string"
+                    },
+                    "notes": {
+                        "type": "string"
+                    },
+                    "output_data": {
+                        "item": {
+                            "$ref": "#/$defs/Data"
+                        },
+                        "type": "array"
+                    },
+                    "prerequisite_computation": {
+                        "format": "uuid",
+                        "type": "string"
+                    },
+                    "public": {
+                        "type": "boolean"
+                    },
+                    "software_configuration": {
+                        "item": {
+                            "$ref": "#/$defs/SoftwareConfiguration"
+                        },
+                        "type": "array"
+                    },
+                    "type": {
+                        "enum": [
+                            "MC",
+                            "MD",
+                            "QM",
+                            "hybrid_dynamics",
+                            "relaxation",
+                            "energy_minimization",
+                            "DPD",
+                            "analysis",
+                            "data_reduction",
+                            "data_fit",
+                            "initialization"
+                        ],
+                        "type": "string"
+                    },
+                    "url": {
+                        "type": "string"
+                    },
+                    "uuid": {
+                        "type": "string"
+                    }
+                },
+                "type": "object"
+            },
+            "ComputationProcess": {
+                "properties": {
+                    "citation": {
+                        "item": {
+                            "$ref": "#/$defs/Reference"
+                        },
+                        "type": "array"
+                    },
+                    "condition": {
+                        "item": {
+                            "$ref": "#/$defs/Condition"
+                        },
+                        "type": "array"
+                    },
+                    "dgraph.type": {
+                        "type": "string"
+                    },
+                    "group": {
+                        "item": {
+                            "$ref": "#/$defs/Group"
+                        },
+                        "type": "array"
+                    },
+                    "ingredient": {
+                        "item": {
+                            "$ref": "#/$defs/Ingredient"
+                        },
+                        "type": "array"
+                    },
+                    "input_data": {
+                        "item": {
+                            "$ref": "#/$defs/Data"
+                        },
+                        "type": "array"
+                    },
+                    "locked": {
+                        "type": "boolean"
+                    },
+                    "model_version": {
+                        "type": "string"
+                    },
+                    "name": {
+                        "type": "string"
+                    },
+                    "notes": {
+                        "type": "string"
+                    },
+                    "output_data": {
+                        "item": {
+                            "$ref": "#/$defs/Data"
+                        },
+                        "type": "array"
+                    },
+                    "property": {
+                        "item": {
+                            "$ref": "#/$defs/Property"
+                        },
+                        "type": "array"
+                    },
+                    "public": {
+                        "type": "boolean"
+                    },
+                    "software_configuration": {
+                        "item": {
+                            "$ref": "#/$defs/SoftwareConfiguration"
+                        },
+                        "type": "array"
+                    },
+                    "type": {
+                        "type": "string"
+                    },
+                    "url": {
+                        "type": "string"
+                    },
+                    "uuid": {
+                        "type": "string"
+                    }
+                },
+                "type": "object"
+            },
+            "ComputationalForcefield": {
+                "properties": {
+                    "building_block": {
+                        "type": "string"
+                    },
+                    "citation": {
+                        "item": {
+                            "$ref": "#/$defs/Reference"
+                        },
+                        "type": "array"
+                    },
+                    "coarse_grained_mapping": {
+                        "type": "string"
+                    },
+                    "data": {
+                        "item": {
+                            "$ref": "#/$defs/Data"
+                        },
+                        "type": "array"
+                    },
+                    "description": {
+                        "type": "string"
+                    },
+                    "implicit_solvent": {
+                        "type": "string"
+                    },
+                    "key": {
+                        "type": "string"
+                    },
+                    "source": {
+                        "type": "string"
+                    }
+                },
+                "type": "object"
+            },
+            "Condition": {
+                "properties": {
+                    "data": {
+                        "item": {
+                            "$ref": "#/$defs/Data"
+                        },
+                        "type": "array"
+                    },
+                    "descriptor": {
+                        "type": "string"
+                    },
+                    "key": {
+                        "enum": [
+                            "time_delay",
+                            "time_duration",
+                            "time_pointeger",
+                            "time_date",
+                            "temperature",
+                            "temperature_rate",
+                            "pressure",
+                            "pressure_rate",
+                            "number",
+                            "volume",
+                            "volume_rate",
+                            "energy",
+                            "shear_rate",
+                            "shear_rate_angular",
+                            "strain",
+                            "frequency",
+                            "light_power",
+                            "light_power_electricity",
+                            "light_irradiance",
+                            "light_wavelength",
+                            "mixing_rate",
+                            "potential",
+                            "material",
+                            "atm",
+                            "ph",
+                            "energy_threshold",
+                            "box_dimension",
+                            "origin",
+                            "boundary_value",
+                            "coordinate",
+                            "boundary_type",
+                            "printeger_speed",
+                            "printeger_layer_height",
+                            "printeger_line_width",
+                            "printeger_pressure",
+                            "ratio",
+                            "deborah_number",
+                            "weissenberg_number",
+                            "peclet_number",
+                            "deborah_number",
+                            "weissenberg_number",
+                            "flow_rate",
+                            "residence_time"
+                        ],
+                        "type": "string"
+                    },
+                    "measurement_id": {
+                        "type": "integer"
+                    },
+                    "set_id": {
+                        "type": "integer"
+                    },
+                    "type": {
+                        "type": "string"
+                    },
+                    "uncertainty": {
+                        "type": "string"
+                    },
+                    "uncertainty_type": {
+                        "type": "string"
+                    },
+                    "unit": {
+                        "type": "string"
+                    },
+                    "value": {
+                        "type": "string"
+                    }
+                },
+                "type": "object"
+            },
+            "Data": {
+                "properties": {
+                    "citation": {
+                        "item": {
+                            "$ref": "#/$defs/Reference"
+                        },
+                        "type": "array"
+                    },
+                    "computation": {
+                        "item": {
+                            "$ref": "#/$defs/Computation"
+                        },
+                        "type": "array"
+                    },
+                    "computation_process": {
+                        "item": {
+                            "$ref": "#/$defs/ComputationProcess"
+                        },
+                        "type": "array"
+                    },
+                    "dgraph.type": {
+                        "type": "string"
+                    },
+                    "file": {
+                        "item": {
+                            "$ref": "#/$defs/File"
+                        },
+                        "type": "array"
+                    },
+                    "group": {
+                        "item": {
+                            "$ref": "#/$defs/Group"
+                        },
+                        "type": "array"
+                    },
+                    "locked": {
+                        "type": "boolean"
+                    },
+                    "material": {
+                        "item": {
+                            "$ref": "#/$defs/Material"
+                        },
+                        "type": "array"
+                    },
+                    "model_version": {
+                        "type": "string"
+                    },
+                    "name": {
+                        "type": "string"
+                    },
+                    "notes": {
+                        "type": "string"
+                    },
+                    "public": {
+                        "type": "boolean"
+                    },
+                    "sample_preparation": {
+                        "format": "uuid",
+                        "type": "string"
+                    },
+                    "type": {
+                        "enum": [
+                            "rxn_conv",
+                            "mn_conv",
+                            "sec_trace",
+                            "sec_trace_vol",
+                            "mwd",
+                            "mwd_wt",
+                            "nmr",
+                            "nmr_h1",
+                            "nmr_c13",
+                            "nmr_n15",
+                            "nmr_o17",
+                            "nmr_f19",
+                            "nmr_si29",
+                            "nmr_p31",
+                            "nmr_noe",
+                            "nmr_tocsy",
+                            "ir",
+                            "thermogram",
+                            "stress_strain",
+                            "waxs",
+                            "saxs",
+                            "frequency_sweep",
+                            "time_temperature_superposition",
+                            "g_prime",
+                            "g_double_prime",
+                            "photo_gray",
+                            "comp_scalar_distr",
+                            "comp_scalar_evolve",
+                            "comp_snapshot",
+                            "comp_scalar_landscape",
+                            "photo_rgb",
+                            "nmr_cosy",
+                            "nmr_hsqc",
+                            "nmr_hmbc",
+                            "nmr_dosy",
+                            "nmr_kinetic",
+                            "waxs_i",
+                            "saxs_i",
+                            "s_neutron",
+                            "tem_height",
+                            "afm_height",
+                            "afm_amp",
+                            "afm_phase",
+                            "computation_config",
+                            "computation_trajectory",
+                            "computation_forcefield",
+                            "energy_landscape",
+                            "charge_distribution",
+                            "grf",
+                            "density_distribution",
+                            "triplet_correlation",
+                            "orientation_distribution",
+                            "kirkwood_function",
+                            "energy_density",
+                            "pmf",
+                            "msd",
+                            "cell_fluctuation",
+                            "connolly_surface",
+                            "permeability_gas_volume",
+                            "permeability_gas_mass",
+                            "product_chemical_composition"
+                        ],
+                        "type": "string"
+                    },
+                    "url": {
+                        "type": "string"
+                    }
+                },
+                "type": "object"
+            },
+            "Equipment": {
+                "properties": {
+                    "citation": {
+                        "item": {
+                            "$ref": "#/$defs/Reference"
+                        },
+                        "type": "array"
+                    },
+                    "condition": {
+                        "item": {
+                            "$ref": "#/$defs/Condition"
+                        },
+                        "type": "array"
+                    },
+                    "description": {
+                        "type": "string"
+                    },
+                    "file": {
+                        "item": {
+                            "$ref": "#/$defs/File"
+                        },
+                        "type": "array"
+                    }
+                },
+                "type": "object"
+            },
+            "Experiment": {
+                "properties": {
+                    "citation": {
+                        "item": {
+                            "$ref": "#/$defs/Reference"
+                        },
+                        "type": "array"
+                    },
+                    "computation": {
+                        "item": {
+                            "$ref": "#/$defs/Computation"
+                        },
+                        "type": "array"
+                    },
+                    "computation_process": {
+                        "item": {
+                            "$ref": "#/$defs/ComputationProcess"
+                        },
+                        "type": "array"
+                    },
+                    "data": {
+                        "item": {
+                            "$ref": "#/$defs/Data"
+                        },
+                        "type": "array"
+                    },
+                    "dgraph.type": {
+                        "type": "string"
+                    },
+                    "funding": {
+                        "item": {
+                            "type": "string"
+                        },
+                        "type": "array"
+                    },
+                    "group": {
+                        "item": {
+                            "$ref": "#/$defs/Group"
+                        },
+                        "type": "array"
+                    },
+                    "locked": {
+                        "type": "boolean"
+                    },
+                    "model_version": {
+                        "type": "string"
+                    },
+                    "name": {
+                        "type": "string"
+                    },
+                    "notes": {
+                        "type": "string"
+                    },
+                    "public": {
+                        "type": "boolean"
+                    },
+                    "url": {
+                        "type": "string"
+                    },
+                    "uuid": {
+                        "type": "string"
+                    }
+                },
+                "required": [
+                    "name"
+                ],
+                "type": "object"
+            },
+            "File": {
+                "properties": {
+                    "data_dictionary": {
+                        "type": "string"
+                    },
+                    "dgraph.type": {
+                        "type": "string"
+                    },
+                    "extension": {
+                        "type": "string"
+                    },
+                    "group": {
+                        "item": {
+                            "$ref": "#/$defs/Group"
+                        },
+                        "type": "array"
+                    },
+                    "locked": {
+                        "type": "boolean"
+                    },
+                    "model_version": {
+                        "type": "string"
+                    },
+                    "name": {
+                        "type": "string"
+                    },
+                    "notes": {
+                        "type": "string"
+                    },
+                    "public": {
+                        "type": "boolean"
+                    },
+                    "source": {
+                        "type": "string"
+                    },
+                    "type": {
+                        "enum": [
+                            "data",
+                            "calibration",
+                            "equipment",
+                            "config",
+                            "computation_property",
+                            "computation_snapshot",
+                            "computation_config",
+                            "computation_trajectory",
+                            "computation_forcefield",
+                            "logs",
+                            "data_dict"
+                        ],
+                        "type": "string"
+                    },
+                    "url": {
+                        "type": "string"
+                    }
+                },
+                "type": "object"
+            },
+            "Group": {
+                "properties": {
+                    "admin": {
+                        "item": {
+                            "$ref": "#/$defs/User"
+                        },
+                        "type": "array"
+                    },
+                    "member": {
+                        "item": {
+                            "$ref": "#/$defs/User"
+                        },
+                        "type": "array"
+                    },
+                    "name": {
+                        "type": "string"
+                    },
+                    "notes": {
+                        "type": "string"
+                    },
+                    "url": {
+                        "type": "string"
+                    }
+                },
+                "type": "object"
+            },
+            "Identifier": {
+                "properties": {
+                    "bigsmiles": {
+                        "type": "string"
+                    },
+                    "cas": {
+                        "type": "string"
+                    },
+                    "inchi": {
+                        "type": "string"
+                    },
+                    "inchi_key": {
+                        "type": "string"
+                    },
+                    "mol_form": {
+                        "type": "string"
+                    },
+                    "names": {
+                        "item": {
+                            "type": "string"
+                        },
+                        "type": "array"
+                    },
+                    "pubchem_cid": {
+                        "type": "integer"
+                    },
+                    "smiles": {
+                        "type": "string"
+                    }
+                },
+                "type": "object"
+            },
+            "Ingredient": {
+                "properties": {
+                    "keyword": {
+                        "enum": [
+                            "monomer",
+                            "polymer",
+                            "initiator",
+                            "catalyst",
+                            "solvent",
+                            "cta",
+                            "quench",
+                            "reagent",
+                            "workup",
+                            "integerermediate",
+                            "computation",
+                            "filler",
+                            "matrix",
+                            "inert_carrier_gas"
+                        ],
+                        "item": {
+                            "type": "string"
+                        },
+                        "type": "array"
+                    },
+                    "quantity": {
+                        "item": {
+                            "$ref": "#/$defs/Quantity"
+                        },
+                        "type": "array"
+                    }
+                },
+                "type": "object"
+            },
+            "Inventory": {
+                "properties": {
+                    "dgraph.type": {
+                        "type": "string"
+                    },
+                    "group": {
+                        "item": {
+                            "$ref": "#/$defs/Group"
+                        },
+                        "type": "array"
+                    },
+                    "locked": {
+                        "type": "boolean"
+                    },
+                    "material": {
+                        "item": {
+                            "$ref": "#/$defs/Material"
+                        },
+                        "type": "array"
+                    },
+                    "model_version": {
+                        "type": "string"
+                    },
+                    "name": {
+                        "type": "string"
+                    },
+                    "notes": {
+                        "type": "string"
+                    },
+                    "public": {
+                        "type": "boolean"
+                    },
+                    "url": {
+                        "type": "string"
+                    },
+                    "uuid": {
+                        "type": "string"
+                    }
+                },
+                "type": "object"
+            },
+            "Material": {
+                "properties": {
+                    "component": {
+                        "item": {
+                            "$ref": "#/$defs/Material"
+                        },
+                        "type": "array"
+                    },
+                    "computational_forcefield": {
+                        "format": "uuid",
+                        "type": "string"
+                    },
+                    "dgraph.type": {
+                        "const": "Material",
+                        "type": "string"
+                    },
+                    "group": {
+                        "item": {
+                            "$ref": "#/$defs/Group"
+                        },
+                        "type": "array"
+                    },
+                    "identifier": {
+                        "format": "uuid",
+                        "type": "string"
+                    },
+                    "keyword": {
+                        "items": {
+                            "enum": [
+                                "thermoset",
+                                "thermoplastic",
+                                "semicrystalline",
+                                "elastomer",
+                                "amorphous",
+                                "homopolymer",
+                                "copolymer",
+                                "random",
+                                "block",
+                                "alternating",
+                                "gradient",
+                                "isotactic",
+                                "syndiotactic",
+                                "atactic",
+                                "regio_regular",
+                                "regio_irregular",
+                                "linear",
+                                "star",
+                                "ring",
+                                "comb",
+                                "bottlebrush",
+                                "hyperbranch",
+                                "network",
+                                "conjugated_poly",
+                                "polymer_blend",
+                                "polyolefins",
+                                "polystyrenes",
+                                "polyphenylenes",
+                                "polyvinyls",
+                                "polyacrylates",
+                                "polymethacrylates",
+                                "polyvinyl_ethers",
+                                "polyvinyl_esters",
+                                "polyesters",
+                                "polycarbonates",
+                                "polyethers",
+                                "polyanydrides",
+                                "polyketones",
+                                "polyamines",
+                                "polyurethanes",
+                                "polyamides",
+                                "polyureas",
+                                "silicones",
+                                "polysulfides",
+                                "polysulfones",
+                                "polysulfoxides",
+                                "polythiophenes",
+                                "polyphosphazenes",
+                                "olefin",
+                                "diene",
+                                "styrene",
+                                "cyclic_olefin",
+                                "acetylene",
+                                "vinyl",
+                                "vinyl_ether",
+                                "vinyl_ester",
+                                "acrylate",
+                                "methylacrylate",
+                                "lactone",
+                                "cyclic_ether",
+                                "cyclic_carbonate",
+                                "cyclic_anhydride",
+                                "oxazoline",
+                                "lactam",
+                                "cyclic_amine",
+                                "cyclic_sulfur",
+                                "thiophene",
+                                "phosphoesters",
+                                "phosphonate",
+                                "phostone",
+                                "phosphazenes",
+                                "siloxane",
+                                "carbosiloxane",
+                                "diol",
+                                "dicarboxylic_acid",
+                                "diamines",
+                                "diacid chloride",
+                                "protein",
+                                "polymer_protein",
+                                "organic",
+                                "organometallic",
+                                "inorganic",
+                                "cell",
+                                "composite",
+                                "gel",
+                                "hydrogel",
+                                "associative_network"
+                            ],
+                            "type": "string"
+                        },
+                        "type": "array"
+                    },
+                    "locked": {
+                        "type": "boolean"
+                    },
+                    "model_version": {
+                        "type": "string"
+                    },
+                    "name": {
+                        "type": "string"
+                    },
+                    "notes": {
+                        "type": "string"
+                    },
+                    "parent_material": {
+                        "format": "uuid",
+                        "type": "string"
+                    },
+                    "property": {
+                        "item": {
+                            "$ref": "#/$defs/Property"
+                        },
+                        "type": "array"
+                    },
+                    "public": {
+                        "type": "boolean"
+                    },
+                    "url": {
+                        "type": "string"
+                    },
+                    "uuid": {
+                        "type": "string"
+                    }
+                },
+                "type": "object"
+            },
+            "Parameter": {
+                "properties": {
+                    "key": {
+                        "type": "string"
+                    },
+                    "unit": {
+                        "type": "string"
+                    },
+                    "value": {
+                        "type": "string"
+                    }
+                },
+                "type": "object"
+            },
+            "Process": {
+                "properties": {
+                    "condition": {
+                        "item": {
+                            "$ref": "#/$defs/Condition"
+                        },
+                        "type": "array"
+                    },
+                    "description": {
+                        "type": "string"
+                    },
+                    "dgraph.type": {
+                        "type": "string"
+                    },
+                    "equipment": {
+                        "item": {
+                            "$ref": "#/$defs/Equipment"
+                        },
+                        "type": "array"
+                    },
+                    "group": {
+                        "item": {
+                            "$ref": "#/$defs/Group"
+                        },
+                        "type": "array"
+                    },
+                    "keyword": {
+                        "enum": [
+                            "polymerization",
+                            "kinetics",
+                            "chain_growth",
+                            "step_growth",
+                            "post_poly_mod",
+                            "living_poly",
+                            "controlled_poly",
+                            "immortal_poly",
+                            "radical_poly",
+                            "rop",
+                            "romp",
+                            "atrp",
+                            "nmp",
+                            "raft",
+                            "anionic",
+                            "cationic",
+                            "insertion",
+                            "lewis-pairs",
+                            "group-transfer",
+                            "bulk",
+                            "emulsion",
+                            "suspension",
+                            "solution",
+                            "integererfacial",
+                            "reactive_processing",
+                            "extrusion",
+                            "blow_molding",
+                            "self_assembly",
+                            "curing",
+                            "forming",
+                            "coating",
+                            "annealing_thermo",
+                            "annealing_sol",
+                            "printegering",
+                            "mixing"
+                        ],
+                        "item": {
+                            "type": "string"
+                        },
+                        "type": "array"
+                    },
+                    "locked": {
+                        "type": "boolean"
+                    },
+                    "model_version": {
+                        "type": "string"
+                    },
+                    "name": {
+                        "type": "string"
+                    },
+                    "notes": {
+                        "type": "string"
+                    },
+                    "prerequisite_process": {
+                        "item": {
+                            "$ref": "#/$defs/Process"
+                        },
+                        "type": "array"
+                    },
+                    "product": {
+                        "item": {
+                            "$ref": "#/$defs/Product"
+                        },
+                        "type": "array"
+                    },
+                    "property": {
+                        "item": {
+                            "$ref": "#/$defs/Property"
+                        },
+                        "type": "array"
+                    },
+                    "public": {
+                        "type": "boolean"
+                    },
+                    "type": {
+                        "enum": [
+                            "multistep",
+                            "mix",
+                            "separate",
+                            "transform",
+                            "no_op",
+                            "mix_separate",
+                            "mix_transform",
+                            "separate_transform",
+                            "precipitation",
+                            "crystallization_solvent",
+                            "distill",
+                            "rotovap",
+                            "dry",
+                            "decant",
+                            "sublimation",
+                            "extraction",
+                            "chromatography",
+                            "filter",
+                            "ion_exchange",
+                            "dialysis",
+                            "affinity_pure",
+                            "venting",
+                            "quench_thermo",
+                            "stir",
+                            "heat",
+                            "cool",
+                            "sedimentation",
+                            "centrifugation",
+                            "reflux",
+                            "crystallization_thermo",
+                            "quench",
+                            "neutralization",
+                            "extrusion",
+                            "blow_molding",
+                            "printegering",
+                            "curing",
+                            "solution_casting"
+                        ],
+                        "type": "string"
+                    },
+                    "url": {
+                        "type": "string"
+                    },
+                    "uuid": {
+                        "type": "string"
+                    },
+                    "waste": {
+                        "item": {
+                            "$ref": "#/$defs/Material"
+                        },
+                        "type": "array"
+                    }
+                },
+                "type": "object"
+            },
+            "Project": {
+                "additionalProperties": false,
+                "properties": {
+                    "collection": {
+                        "items": {
+                            "$ref": "#/$defs/Collection"
+                        },
+                        "type": "array"
+                    },
+                    "dgraph.type": {
+                        "const": "Project",
+                        "type": "string"
+                    },
+                    "group": {
+                        "items": {
+                            "$ref": "#/$defs/Group"
+                        },
+                        "type": "array"
+                    },
+                    "locked": {
+                        "type": "boolean"
+                    },
+                    "material": {
+                        "items": {
+                            "$ref": "#/$defs/Material"
+                        },
+                        "type": "array"
+                    },
+                    "model_version": {
+                        "type": "string"
+                    },
+                    "name": {
+                        "type": "string"
+                    },
+                    "notes": {
+                        "type": "string"
+                    },
+                    "public": {
+                        "type": "boolean"
+                    },
+                    "url": {
+                        "type": "string"
+                    }
+                },
+                "required": [
+                    "name"
+                ],
+                "type": "object"
+            },
+            "Property": {
+                "properties": {
+                    "citation": {
+                        "item": {
+                            "$ref": "#/$defs/Reference"
+                        },
+                        "type": "array"
+                    },
+                    "component": {
+                        "item": {
+                            "$ref": "#/$defs/Material"
+                        },
+                        "type": "array"
+                    },
+                    "computation": {
+                        "item": {
+                            "$ref": "#/$defs/Computation"
+                        },
+                        "type": "array"
+                    },
+                    "condition": {
+                        "item": {
+                            "$ref": "#/$defs/Condition"
+                        },
+                        "type": "array"
+                    },
+                    "data": {
+                        "item": {
+                            "$ref": "#/$defs/Data"
+                        },
+                        "type": "array"
+                    },
+                    "key": {
+                        "type": "string"
+                    },
+                    "method": {
+                        "enum": [
+                            "prescribed",
+                            "comp",
+                            "nmr",
+                            "sec",
+                            "gc",
+                            "chrom",
+                            "ms",
+                            "maldi",
+                            "ultra_centr",
+                            "osmtic_pres",
+                            "calorimetry",
+                            "cryoscopy",
+                            "ebullioscopy",
+                            "viscometer",
+                            "utm",
+                            "dma",
+                            "dsc",
+                            "tga",
+                            "raman",
+                            "ir",
+                            "near-ir",
+                            "uv_vis",
+                            "x_ray",
+                            "saxs",
+                            "waxs",
+                            "neutron",
+                            "ls",
+                            "dls",
+                            "confocal",
+                            "afm",
+                            "tem",
+                            "sem",
+                            "scale",
+                            "mals",
+                            "membrane_osmometry",
+                            "sec_mals",
+                            "sec_visco",
+                            "sec_ir",
+                            "ASTM_D3574_Test_A",
+                            "ASTM_D3574_Test_B1",
+                            "ASTM_D3574_Test_B2",
+                            "ASTM_D3574_Test_C",
+                            "ASTM_D3574_Test_D",
+                            "ASTM_D3574_Test_E",
+                            "ASTM_D3574_Test_F",
+                            "ASTM_D3574_Test_G",
+                            "ASTM_D3574_Test_H",
+                            "ASTM_D3574_Test_I1",
+                            "ASTM_D3574_Test_I2",
+                            "ASTM_D3574_Test_I3",
+                            "ASTM_D3574_Test_I4",
+                            "ASTM_D3574_Test_I5",
+                            "ASTM_D3574_Test_J",
+                            "ASTM_D3574_Test_K",
+                            "ASTM_D3574_Test_L",
+                            "ASTM_D3574_Test_M"
+                        ],
+                        "type": "string"
+                    },
+                    "notes": {
+                        "type": "string"
+                    },
+                    "sample_preparation": {
+                        "format": "uuid",
+                        "type": "string"
+                    },
+                    "structure": {
+                        "type": "string"
+                    },
+                    "type": {
+                        "type": "string"
+                    },
+                    "uncertaintegery": {
+                        "type": "string"
+                    },
+                    "uncertaintegery_type": {
+                        "type": "string"
+                    },
+                    "unit": {
+                        "type": "string"
+                    },
+                    "value": {
+                        "type": "string"
+                    }
+                },
+                "type": "object"
+            },
+            "Quantity": {
+                "properties": {
+                    "key": {
+                        "type": "string"
+                    },
+                    "uncertaintegery": {
+                        "type": "string"
+                    },
+                    "uncertaintegery_type": {
+                        "type": "string"
+                    },
+                    "unit": {
+                        "type": "string"
+                    },
+                    "value": {
+                        "type": "string"
+                    }
+                },
+                "type": "object"
+            },
+            "Reference": {
+                "properties": {
+                    "arxiv_id": {
+                        "type": "string"
+                    },
+                    "author": {
+                        "item": {
+                            "type": "string"
+                        },
+                        "type": "array"
+                    },
+                    "doi": {
+                        "type": "string"
+                    },
+                    "issn": {
+                        "type": "string"
+                    },
+                    "issue": {
+                        "type": "integer"
+                    },
+                    "journal": {
+                        "type": "string"
+                    },
+                    "pages": {
+                        "item": {
+                            "type": "integer"
+                        },
+                        "type": "array"
+                    },
+                    "pmid": {
+                        "type": "integer"
+                    },
+                    "publisher": {
+                        "type": "string"
+                    },
+                    "type": {
+                        "enum": [
+                            "book",
+                            "journal_article",
+                            "encyclopedia_article",
+                            "news_paper",
+                            "patent",
+                            "thesis",
+                            "web_site",
+                            "database"
+                        ],
+                        "type": "string"
+                    },
+                    "url": {
+                        "type": "string"
+                    },
+                    "volume": {
+                        "type": "integer"
+                    },
+                    "website": {
+                        "type": "string"
+                    },
+                    "year": {
+                        "type": "integer"
+                    }
+                },
+                "type": "object"
+            },
+            "Software": {
+                "properties": {
+                    "name": {
+                        "type": "string"
+                    },
+                    "source": {
+                        "type": "string"
+                    },
+                    "url": {
+                        "type": "string"
+                    },
+                    "version": {
+                        "type": "string"
+                    }
+                },
+                "type": "object"
+            },
+            "SoftwareConfiguration": {
+                "properties": {
+                    "algorithms": {
+                        "item": {
+                            "$ref": "#/$defs/Algorithm"
+                        },
+                        "type": "array"
+                    },
+                    "citation": {
+                        "item": {
+                            "$ref": "#/$defs/Reference"
+                        },
+                        "type": "array"
+                    },
+                    "notes": {
+                        "type": "string"
+                    },
+                    "software": {
+                        "format": "uuid",
+                        "type": "string"
+                    }
+                },
+                "type": "object"
+            },
+            "User": {
+                "properties": {
+                    "email": {
+                        "type": "string"
+                    },
+                    "group": {
+                        "item": {
+                            "$ref": "#/$defs/Group"
+                        },
+                        "type": "array"
+                    },
+                    "orcid": {
+                        "type": "string"
+                    },
+                    "url": {
+                        "type": "string"
+                    },
+                    "username": {
+                        "type": "string"
+                    }
+                },
+                "type": "object"
+            }
+        },
+        "$id": "/schema",
+        "$ref": "#/$defs/Project"
+    },
+    "error": null
+}

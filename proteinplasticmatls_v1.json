@@ -1,0 +1,246 @@
+Comments Block
+*group for all nodes is assumed to be identical to that of the project
+*for material identifiers, process type, ingredient quantities, data type, and data file, enter "null"
+*dashed lines represent links through sub-objects in the graph.  Ignore them in the JSON
+*use project "CRIPT End-to-End Test Papers" for all data entry and keep group as "CRIPT_E2E"
+*use one collection per paper
+
+
+{
+	"node":"Group",
+	"name":"CRIPT_E2E"
+}
+
+{
+	"node":"Project",
+	"name":"CRIPT End-to-End Test Papers",
+	"group":"CRIPT_E2E",
+	"collections":[
+		"Cao et al. Protein Elastomers"
+	],
+	"materials":[
+		{
+			"name": "Whey protein isolate",
+			"identifiers": [
+				""
+			]
+		},
+		"Whey protein powder",
+		"Whey protein concentrate",
+		"Bovine serum albumin",
+		"Soy protein isolate",
+		"Pea protein isolate",
+		"water",
+		"WPI supernatant",
+		"WPP supernatant",
+		"WPC supernatant",
+		"BSA supernatant",
+		"SPI supernatant",
+		"PPI supernatant",
+		"Sodium hydroxide",
+		"Methacrylic anhydride",
+		"WPI methacrylate",
+		"WPP methacrylate",
+		"WPC methacrylate",
+		"BSA methacrylate",
+		"SPI methacrylate",
+		"PPI methacrylate",
+		"WPI unheated film",
+		"BSA unheated film",
+		"SPI unheated film",
+		"PPI unheated film",
+		"WPI heated film",
+		"BSA heated film",
+		"SPI heated film",
+		"PPI heated film",
+		"hydroxypropylacrylate",
+		"2-hydroxypropylacrylate",
+		"1-hydroxy-2-methyl-ethylacrylate",
+		"Basic alumina",
+		"Ammonium persulfate",
+		"TEMED",
+		"WPI CP23",
+		"WPI CP70",
+		"WPI CP100",
+		"WPI CP120",
+		"WPP CP23",
+		"WPP CP100",
+		"WPC CP23",
+		"WPC CP100",
+		"BSA CP23",
+		"BSA CP100",
+		"SPI CP23",
+		"SPI CP100",
+		"PPI CP23",
+		"PPI CP100"
+	]
+}
+
+{
+	"node":"Collection",
+	"name":"Cao et al. Protein Elastomers",
+	"citation":[
+		{
+			"node":"Citation",
+			"reference":{
+				"node":"Reference",
+				"name":"10.1021/acs.biomac.2c00372",
+				"type":"journal_article",
+				"title":"Strengthening and Toughening of Protein-Based Thermosets via Intermolecular Self-Assembly",
+				"authors":[
+					"Yiping Cao",
+					"Bradley D. Olsen"
+				],
+				"journal":"Biomacromolecules",
+				"publisher":"American Chemical Society",
+				"year":"2022",
+				"volume":"23",
+				"pages":"3286-3295",
+				"doi":"10.1021/acs.biomac.2c00372"
+			}
+		}
+	]
+}
+
+{
+	"node":"Inventory",
+	"name":"Protein Materials",
+	"collection":"Cao et al. Protein Elastomers",
+	"materials":[
+		"Whey protein isolate",
+		"Whey protein powder",
+		"Whey protein concentrate",
+		"Bovine serum albumin",
+		"Soy protein isolate",
+		"Pea protein isolate",
+		"WPI supernatant",
+		"WPP supernatant",
+		"WPC supernatant",
+		"BSA supernatant",
+		"SPI supernatant",
+		"PPI supernatant",
+		"WPI methacrylate",
+		"WPP methacrylate",
+		"WPC methacrylate",
+		"BSA methacrylate",
+		"SPI methacrylate",
+		"PPI methacrylate",
+		"WPI unheated film",
+		"BSA unheated film",
+		"SPI unheated film",
+		"PPI unheated film",
+		"WPI heated film",
+		"BSA heated film",
+		"SPI heated film",
+		"PPI heated film",
+		"WPI CP23",
+		"WPI CP70",
+		"WPI CP100",
+		"WPI CP120",
+		"WPP CP23",
+		"WPP CP100",
+		"WPC CP23",
+		"WPC CP100",
+		"BSA CP23",
+		"BSA CP100",
+		"SPI CP23",
+		"SPI CP100",
+		"PPI CP23",
+		"PPI CP100"
+	]
+}
+
+{
+	"node":"Experiment",
+	"name":"Methacrylation",
+	"collection":"Cao et al. Protein Elastomers",
+	"processes":[
+		"WPI Centrifugation",
+		"WPP Centrifugation",
+		"WPC Centrifugation",
+		"BSA Centrifugation",
+		"SPI Centrifugation",
+		"PPI Centrifugation",
+		"WPI Methacrylation",
+		"WPP Methacrylation",
+		"WPC Methacrylation",
+		"BSA Methacrylation",
+		"SPI Methacrylation",
+		"PPI Methacrylation"
+	]
+}
+
+{
+	"node":"Material",
+	"name":"Whey protein isolate"
+	"identifiers":[
+		"null"
+	]
+}
+
+{
+	"node":"Process",
+	"name":"WPI Centrifugation",
+	"type":"null",
+	"ingredients":[
+		{
+			"node":"Ingredient",
+			"material":"Whey protein isolate",
+			"quantities":[
+				"null"
+			]
+		}
+	],
+	"products":[
+		"WPI supernatant"
+	]
+}
+
+{
+	"node":"Process",
+	"name":"WPI thermoset synthesis 23",
+	"type":"null",
+	"ingredients":[
+		{
+			"node":"Ingredient",
+			"material":"WPI methacrylate",
+			"quantities":[
+				"null"
+			]
+		},
+		{
+			"node":"Ingredient",
+			"material":"Ammonium persulfate",
+			"quantities":[
+				"null"
+			]
+		},
+		{
+			"node":"Ingredient",
+			"material":"TEMED",
+			"quantities":[
+				"null"
+			]
+		}
+	],
+	"products":[
+		"WPI CP23"
+	],
+	"prerequisite_processes":[
+		"Column purification"
+	]
+}
+
+{
+	"node":"Data",
+	"name":"WPI CP23 Tensile Test",
+	"type":"null",
+	"files":[
+		"null"
+	],
+	"sample_preparation":"WPI CP23 Die cutting",
+	"materials":[
+		"WPI CP32"
+	]
+}
+
